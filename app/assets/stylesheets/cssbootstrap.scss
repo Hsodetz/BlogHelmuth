@@ -1,0 +1,17 @@
+
+// Configuramos los colores del navbar-default
+$navbar-default-bg: #03a9f4;
+$navbar-default-link-hover-bg: #039be5;
+$navbar-default-color: white;
+$navbar-default-link-color: white;
+$navbar-default-border: darken($navbar-default-bg, 6.5%);
+$navbar-default-link-hover-color: white;
+$navbar-default-link-active-color: white;
+$navbar-default-link-active-bg: #039be5;
+
+// Configuramos los colores del dropdown
+$dropdown-bg: #03a9f4;
+$dropdown-link-color: white;
+$dropdown-link-hover-color: white;
+$dropdown-link-hover-bg: #039be5;
+$dropdown-divider-bg: silver;

@@ -1,0 +1,14 @@
+
+<!-- Mensaje que se mostrara si hay errores de validacion -->
+<% if @articulo.errors.full_messages.each do |msg| %>
+  <script type="text/javascript">
+    toastr["warning"]("<%= msg %>", "Articulos")
+  </script>
+<% end %>
+<% end %>
+
+<% if flash[:success] %>
+  <script type="text/javascript">
+    toastr["success"]("<%= flash[:success] %>", "Articulos")
+  </script>
+<% end %>

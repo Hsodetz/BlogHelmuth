@@ -1,0 +1,14 @@
+
+<!-- Mensajes Flash para devise -->
+
+<% if flash[:notice] %>
+<script type="text/javascript">
+  toastr["success"]("<%= notice %>", "Inicio Sesion");
+</script>
+<% end %>
+
+<% if flash[:alert] %>
+  <script type="text/javascript">
+    toastr["warning"]("<%= alert %>", "Inicio Sesion")
+  </script>
+<% end %>

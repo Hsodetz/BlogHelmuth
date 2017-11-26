@@ -1,0 +1,18 @@
+
+<h1 class="text-center" >Comentarios</h1>
+
+<p class="text-right"><span class="label label-primary"> <%= @articulo.comentarios.size %> Comentarios </span></p>
+
+<ul class="list-group">
+  <% @articulo.comentarios.each do |comentario| %>
+  <li class="list-group-item">
+    <h4 class="text-success"> <%= comentario.comentario %></h4>
+    <p class="text-primary">Escrito por: <%= comentario.usuario.name %></p>
+    <p class="text-warning">Creado: <%= comentario.created_at %></p>
+    <p class="text-danger"><%= link_to "Eliminar Comentario", articulo_comentario_path(@articulo, comentario), method: :delete,
+      data: {confirm: "Estas seguro de eliminar el comentario ?",
+      commit: 'Seguro!', title: 'Eliminar Comentario!', cancel: 'Cancela!'}, class: "btn btn-danger btn-xs" %>
+   </p>
+  </li>
+  <% end %>
+</ul>

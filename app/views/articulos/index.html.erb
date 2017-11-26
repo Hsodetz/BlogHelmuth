@@ -1,0 +1,37 @@
+
+
+<h1 class="text-center"> Listado de Articulos </h1>
+
+<table class="table table-striped table-responsive table-hover table-condensed text-center">
+  <thead>
+    <th class="text-center"> id </th>
+    <th class="text-center"> Titulo </th>
+    <th class="text-center"> Descripcion </th>
+    <% if usuario_signed_in? %>
+      <th class="text-center">Controles</th>
+    <% end %>
+
+  </thead>
+
+  <tbody>
+    <% @articulos.each do |articulo| %>
+    <tr class="info">
+      <td><%= articulo.id %></td>
+      <td><%= articulo.titulo %></td>
+      <td><%= articulo.descripcion %></td>
+      <% if usuario_signed_in? %>
+      <td>
+        <%= link_to "Visualizar", articulo_path(articulo), class: "btn btn-info btn-xs" %>
+        <%= link_to "Editar", edit_articulo_path(articulo), class: "btn btn-warning btn-xs" %>
+        <%= link_to "Eliminar", articulo_path(articulo), method: :delete,
+            class: "btn btn-danger btn-xs", data: {confirm: "Estas seguro de eliminar el articulo #{articulo.titulo} ?",
+              commit: 'Seguro!', title: 'Eliminar Articulo!', cancel: 'Cancela!' } %>
+      </td>
+      <% end %>
+    </tr>
+    <% end %>
+
+  </tbody>
+</table>
+
+  <%= paginate(@articulos) %>

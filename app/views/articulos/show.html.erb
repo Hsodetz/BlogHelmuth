@@ -1,0 +1,28 @@
+
+<%= render 'partials/flasharticulos' %>
+
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h3 class="panel-title"> Bienvenid@ al articulo <%= @articulo.titulo %> </h3>
+  </div>
+    <div class="panel-body">
+      <h4> <%= @articulo.titulo %> </h4>
+      <p> <%= @articulo.descripcion %> </p>
+
+      <div >
+        <%= image_tag(@articulo.imagen_articulo_url(:small), class: "img-rounded")  %>
+      </div>
+
+      <h6> <span style="color: Purple">Creado por:</span> <span class="label label-primary"> <%= current_usuario.name %> </span> </h6>
+
+      <p> <%= current_usuario.name %>, haz iniciado sesion <%= current_usuario.sign_in_count %> veces </p>
+
+      <span class="label label-warning"> <%= @articulo.contador_visita %> Visitas </span>
+      <br>
+      <%= link_to "Atras", :back %>
+    </div>
+
+</div>
+
+<%= render 'comentarios/formcomentarios', titulo_comentarios: "Ingresa tu Comentario!" %>
+<%= render 'comentarios/comentarios' %>

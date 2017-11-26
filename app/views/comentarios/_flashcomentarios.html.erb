@@ -1,0 +1,6 @@
+<% if @comentario.errors.full_messages.each do |msg| %>
+  <script type="text/javascript">
+    toastr["warning"]("<%= msg %>", "Comentarios")
+  </script>
+<% end %>
+<% end %>

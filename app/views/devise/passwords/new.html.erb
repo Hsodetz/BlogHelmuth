@@ -1,0 +1,22 @@
+
+<div class="panel panel-danger">
+  <div class="panel-body">
+    <h2>Olvidaste tu contrasena</h2>
+
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+      <%= devise_error_messages! %>
+
+      <div class="form-group">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, class: "form-control" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Reestablecer Contrasena", class: "btn btn-primary" %>
+      </div>
+    <% end %>
+
+    <%= render "devise/shared/links" %>    
+  </div>
+
+</div>

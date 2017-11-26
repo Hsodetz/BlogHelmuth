@@ -1,0 +1,13 @@
+
+<h2 class="text-center"> <%= titulo_comentarios %> </h2>
+
+<%= form_for ([@articulo, @comentario]) do |f| %>
+
+  <div class="form-group">
+    <%= f.label :comentario %>
+    <%= f.text_field :comentario, class: "form-control" %>
+  </div>
+
+  <%= f.submit "Ingresa Comentario!", class: "btn btn-primary"%>
+
+<% end %>
